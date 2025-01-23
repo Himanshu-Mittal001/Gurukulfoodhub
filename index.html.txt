@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Personal Records</title>
+  <link rel="stylesheet" href="style.css">
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Manage Personal Records</h1>
+    <nav>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <ul id="navList">
+        <li><a href="index.html">Personal Records</a></li>
+        <li><a href="transactions.html">Transactions</a></li>
+        <li><a href="transaction_history.html">Transaction History</a></li>
+      </ul>
+      <label class="switch">
+        <input type="checkbox" id="modeToggle" onclick="toggleMode()">
+        <span class="slider round"></span>
+      </label>
+    </nav>
+  </header>
+
+  <main>
+    <div class="records-section">
+      <div class="section">
+        <h2>Customer</h2>
+        <form id="customerForm">
+          <input type="text" id="customerName" placeholder="Name" required>
+          <input type="text" id="customerCategory" placeholder="Category" required>
+          <input type="text" id="customerGuardian" placeholder="Guardian Name" required>
+          <textarea id="customerAddress" placeholder="Address" required></textarea>
+          <input type="tel" id="customerContact" placeholder="Contact Numbers" required>
+          <input type="file" id="customerImage" accept="image/*">
+          <button type="submit">Save Customer Record</button>
+        </form>
+        <div id="customerRecords">
+          <!-- Customer records will be displayed here -->
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Vendor</h2>
+        <form id="vendorForm">
+          <input type="text" id="vendorName" placeholder="Vendor Name" required>
+          <input type="text" id="vendorCategory" placeholder="Category" required>
+          <input type="tel" id="vendorContact" placeholder="Contact Numbers" required>
+          <textarea id="vendorAddress" placeholder="Address" required></textarea>
+          <input type="file" id="vendorImage" accept="image/*">
+          <button type="submit">Save Vendor Record</button>
+        </form>
+        <div id="vendorRecords">
+          <!-- Vendor records will be displayed here -->
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Worker</h2>
+        <form id="workerForm">
+          <input type="text" id="workerName" placeholder="Worker Name" required>
+          <input type="text" id="workerCategory" placeholder="Role/Department" required>
+          <input type="date" id="workerDOJ" placeholder="Date of Joining" required>
+          <input type="tel" id="workerContact" placeholder="Contact Number" required>
+          <textarea id="workerAddress" placeholder="Address" required></textarea>
+          <input type="file" id="workerImage" accept="image/*">
+          <button type="submit">Save Worker Record</button>
+        </form>
+        <div id="workerRecords">
+          <!-- Worker records will be displayed here -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; Developed by Radhika</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

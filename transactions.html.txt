@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transaction Manager</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Add jsPDF CDN here -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Transaction Manager</h1>
+    <nav>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <ul id="navList">
+        <li><a href="index.html">Personal Records</a></li>
+        <li><a href="transactions.html">Transactions</a></li>
+        <li><a href="transaction_history.html">Transaction History</a></li>
+      </ul>
+      <label class="switch">
+        <input type="checkbox" id="modeToggle" onclick="toggleMode()">
+        <span class="slider round"></span>
+      </label>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Select Category to Add Transactions</h2>
+    <select id="categorySelect" onchange="loadTransactions(this.value)">
+      <option value="customer">Customer</option>
+      <option value="vendor">Vendor</option>
+      <option value="worker">Worker</option>
+    </select>
+
+    <div id="transactionTableContainer">
+      <!-- Dynamic Transaction Table will be loaded here based on selection -->
+    </div>
+
+    <button class="pdf-button" onclick="generatePDF()">Download as PDF</button>
+
+    <footer>
+      <p>&copy; Developed by Radhika</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
